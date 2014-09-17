@@ -16,9 +16,9 @@
   "plusplus": true,
   "quotmark": "single",
   "regexp": true,
-  "undef": true,
-  "unused": true,
-  "strict": true,
+  "undef": false,
+  "unused": false,
+  "strict": false,
   "maxdepth": 3,
   "trailing": true,
   "smarttabs": true,
@@ -32,6 +32,8 @@
     "before": true,
     "after": true,
     "beforeEach": true,
-    "afterEach": true
+    "afterEach": true,
+    "Marionette": true,
+    "Dialog": true
   }
 }
