@@ -1,0 +1,23 @@
+{
+  "name": "mobile.dialogs",
+  "version": "0.0.0",
+  "description": "The awesome javascript library",
+  "main": "dist/mobile.dialogs.js",
+  "author": {
+    "name": "Stéphane Bachelier",
+    "email": "stephane.bachelier@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/stephanebachelier/mobile.dialogs.git",
+    "type": "git"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
