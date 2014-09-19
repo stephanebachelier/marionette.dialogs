@@ -9,18 +9,16 @@ function (Marionette, Dialogs, template) {
   return Marionette.ItemView.extend({
     template: template,
     ui: {
-      button: 'button[data-action=open]'
+      button: 'a[data-action=open]'
     },
 
     events: {
-      'click @ui.button': 'openDialog'
+      'click @ui.button': 'handleOpen'
     },
 
-    openDialog: function (e) {
-      var type = e && e.currentTarget.dataSet('type');
-      var dialog;
-      if (type && Dialogs[type]) {
-        dialog = new Dialogs[type]();
+    handleOpen: function (e) {
+      if (e.currentTarget.dataset.type) {
+        this.trigger('dialog:open', e.currentTarget.dataset.type);
       }
     }
   });

@@ -1,0 +1,25 @@
+.fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+.dialog-container.active {
+  position: absolute;
+  top: 0;
+}
+
+.dialog--alert {
+  width: 80%;
+  margin: 100px auto 0;
+  background: wheat;
+  padding: 10px;
+  text-align: center;
+}
+
+.dialog--alert .dialog--title {
+
+}
+
+.dialog--alert .dialog--message {
+
+}

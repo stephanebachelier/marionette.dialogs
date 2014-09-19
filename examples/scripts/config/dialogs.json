@@ -1,0 +1,9 @@
+{
+  "dialogs": {
+    "alert": {
+      "title": "alert!",
+      "text": "this is an alert",
+      "label": "foo !"
+    }
+  }
+}
