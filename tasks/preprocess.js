@@ -1,6 +1,6 @@
 module.exports = {
   bundle: {
-    src: ['lib/index.js'],
+    src: ['lib/build.js'],
     dest: 'dist/<%= pkg.name.replace(/.js$/, "") %>.js'
   }
 };
