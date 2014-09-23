@@ -1,15 +1,15 @@
 {
-  "name": "mobile.dialogs",
+  "name": "marionette.dialogs",
   "version": "0.0.0",
   "description": "The awesome javascript library",
-  "main": "dist/mobile.dialogs.js",
+  "main": "dist/marionette.dialogs.js",
   "readmeFilename": "README.md",
   "author": {
     "name": "Stéphane Bachelier",
     "email": "stephane.bachelier@gmail.com"
   },
   "repository": {
-    "url": "https://github.com/stephanebachelier/mobile.dialogs.git",
+    "url": "https://github.com/stephanebachelier/marionette.dialogs.git",
     "type": "git"
   },
   "license": "MIT",
