@@ -9,3 +9,4 @@ build:
   - preprocess
   - concat
   - uglify
+  - copy:example
