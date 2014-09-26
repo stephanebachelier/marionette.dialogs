@@ -15,6 +15,10 @@
     },
     "notification": {
       "text": "This is an awesome notification that must be closed"
+    },
+    "waiting": {
+      "title": "Registration",
+      "text": "We are currently in the process of creating your account. Thank your for you patience."
     }
   }
 }
