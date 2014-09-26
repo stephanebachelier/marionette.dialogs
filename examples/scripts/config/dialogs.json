@@ -4,6 +4,14 @@
       "title": "alert!",
       "text": "this is an alert",
       "label": "foo !"
+    },
+    "confirm": {
+      "title": "confirm",
+      "text": "Yes or no, that is the question.",
+      "label": {
+        "ok": "Yes",
+        "nok": "No"
+      }
     }
   }
 }
