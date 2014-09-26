@@ -55,12 +55,12 @@ define([
   
     confirm: function () {
       this.triggerMethod('confirm');
-      this.close();
+      this.destroy();
     },
   
     reject: function () {
       this.triggerMethod('reject');
-      this.close();
+      this.destroy();
     }
   });
   
