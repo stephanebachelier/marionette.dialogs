@@ -5,6 +5,11 @@
       "text": "this is an alert",
       "label": "foo !"
     },
+    "alert.success": {
+      "title": "alert!",
+      "text": "this is a successful alert",
+      "label": "foo !"
+    },
     "confirm": {
       "title": "confirm",
       "text": "Yes or no, that is the question.",

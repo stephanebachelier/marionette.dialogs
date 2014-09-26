@@ -1,17 +1,17 @@
 define([
   'marionette',
-  'marionette.dialogs',
+  '../dialog.registry',
   'json!config/dialogs.json'
 ],
-function (Marionette, dialogs, config) {
+function (Marionette, registry, config) {
   'use strict';
   var builder = Object.create(null);
 
   builder.create = function (type) {
-    if (!type && !dialogs[type]) {
+    if (!type && !registry[type]) {
       return;
     }
-    var view = new dialogs[type]({
+    var view = new registry[type]({
       dialog: config.dialogs[type] || {}
     });
 
