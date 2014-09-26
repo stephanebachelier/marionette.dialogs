@@ -1,6 +1,6 @@
 define([
   'marionette',
-  'mobile.dialogs',
+  'marionette.dialogs',
   'hbs!templates/main'
 ],
 function (Marionette, Dialogs, template) {

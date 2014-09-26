@@ -1,5 +1,5 @@
-/*! mobile.dialogs - v0.0.0
- *  Release on: 2014-09-18
+/*! marionette.dialogs - v0.0.0
+ *  Release on: 2014-09-26
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -35,21 +35,36 @@ define([
       // if developer want to track alert closing the `close` event
       // is always triggered
       this.destroy();
-    },
-  
-    serializeData: function () {
-      var data = Dialog.prototype.serializeData.apply(this);
-  
-      // set result to data default to error.
-      data.result = this.result || 'error';
-  
-      return data;
     }
   });
   
   dialogs.alert = Alert;
+
+  var Confirm = Dialog.extend({
+    className: 'dialog dialog--confirm',
   
-  dialogs.alert = Alert;
+    ui: {
+      ok: '.confirm--ok--button',
+      nok: '.confirm--nok--button'
+    },
+  
+    events: {
+      'click @ui.ok': 'confirm',
+      'click @ui.nok': 'reject',
+    },
+  
+    confirm: function () {
+      this.triggerMethod('confirm');
+      this.close();
+    },
+  
+    reject: function () {
+      this.triggerMethod('reject');
+      this.close();
+    }
+  });
+  
+  dialogs.confirm = Confirm;
 
   // attach to marionette
   Marionette.dialogs = dialogs;

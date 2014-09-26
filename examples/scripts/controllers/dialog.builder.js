@@ -1,6 +1,6 @@
 define([
   'marionette',
-  'mobile.dialogs',
+  'marionette.dialogs',
   'json!config/dialogs.json'
 ],
 function (Marionette, dialogs, config) {
@@ -14,7 +14,7 @@ function (Marionette, dialogs, config) {
     var view = new dialogs[type]({
       dialog: config.dialogs[type] || {}
     });
-    
+
     return view;
   };
 
