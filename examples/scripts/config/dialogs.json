@@ -12,6 +12,9 @@
         "ok": "Yes",
         "nok": "No"
       }
+    },
+    "notification": {
+      "text": "This is an awesome notification that must be closed"
     }
   }
 }

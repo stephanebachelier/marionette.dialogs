@@ -9,17 +9,21 @@
 }
 
 .dialog {
-  width: 80%;
-  margin: 100px auto 0;
   background: wheat;
   padding: 10px;
+  border-radius: 5px;
+}
+
+.dialog--alert, .dialog--confirm {
+  width: 80%;
+  margin: 100px auto 0;
   text-align: center;
 }
 
-.dialog--alert .dialog--title {
-
-}
-
-.dialog--alert .dialog--message {
-
+.dialog--notification {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  text-align: left;
 }
