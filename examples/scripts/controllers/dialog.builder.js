@@ -28,7 +28,6 @@ function (Marionette, dialogs, config) {
 
       region.$el.toggleClass('active');
       view.on('destroy', function (view) {
-        region.empty();
         region.$el.toggleClass('active');
       }, this);
     });
