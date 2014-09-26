@@ -1,3 +1,4 @@
+/*
 require.config({
   paths: {
     jquery: '../bower_components/jquery/dist/jquery',
@@ -14,13 +15,12 @@ require.config({
   // default
   hbs: {}
 });
-
+*/
 require([
   'marionette',
   './controllers/dialogs',
   './views/dialogs'
 ], function (Marionette, DialogController, DialogsView) {
-  'use strict';
   console.log('test');
 
   var app = new Marionette.Application();

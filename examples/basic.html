@@ -9,11 +9,11 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css(.tmp) styles/vendors.css -->
-    <link rel="stylesheet" href="bower_components/ratchet/dist/css/ratchet.css">
+    <link rel="stylesheet" href="../bower_components/ratchet/dist/css/ratchet.css">
     <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="basic/styles/main.css">
     <link rel="stylesheet" href="styles/viewer.css">
     <!-- endbuild -->
 
@@ -26,6 +26,10 @@
       </div>
     </div>
 
-    <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+    <script src="../bower_components/requirejs/require.js"></script>
+    <script src="scripts/config.js"></script>
+    <script>
+      config('basic/scripts', 'main');
+    </script>
   </body>
 </html>
