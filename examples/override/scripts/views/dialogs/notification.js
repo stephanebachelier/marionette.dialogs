@@ -18,7 +18,7 @@ define([
     },
 
     events: {
-      'click @ui.closeButton': dismiss
+      'click @ui.closeButton': 'dismiss'
     }
   });
 });
