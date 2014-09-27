@@ -1,7 +1,7 @@
 {
   "name": "marionette.dialogs",
   "version": "0.0.0",
-  "description": "The awesome javascript library",
+  "description": "A collection of dialogs found in a web app made with marionette",
   "main": "dist/marionette.dialogs.js",
   "readmeFilename": "README.md",
   "author": {
