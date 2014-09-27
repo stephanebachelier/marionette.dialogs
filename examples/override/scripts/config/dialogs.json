@@ -10,6 +10,11 @@
       "text": "this is a successful alert",
       "label": "foo !"
     },
+    "alert.error": {
+      "title": "access denied",
+      "text": "you provided wrong credentials",
+      "label": "ok"
+    },
     "confirm": {
       "title": "confirm",
       "text": "Yes or no, that is the question.",

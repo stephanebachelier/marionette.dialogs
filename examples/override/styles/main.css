@@ -7,3 +7,19 @@
   border-radius: 10px;
   border: solid green 3px;
 }
+
+.alert--error {
+  background: white;
+}
+
+.alert--error .dialog--title {
+  color: #d9534f;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 10px 0;
+}
+
+.alert--error .icon-person {
+  color: #d9534f;
+  font-size: 20px;
+}
