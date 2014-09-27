@@ -27,3 +27,27 @@
 .dialog--notification a {
   color: #777;
 }
+
+.dialog--waiting {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.dialog--waiting.fold {
+  top: 90%;
+}
+
+.fold .waiting--title, .fold .waiting--text {
+  display: none;
+}
+
+.waiting--loader {
+  position: relative;
+  top: 100px;
+  margin-top: 0;
+}
+
+.fold .waiting--loader {
+  top: 10px;
+}
