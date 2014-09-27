@@ -51,3 +51,7 @@
 .fold .waiting--loader {
   top: 10px;
 }
+
+.notification--autohide p {
+  margin-bottom: 0;
+}

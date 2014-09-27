@@ -26,6 +26,9 @@
     "notification": {
       "text": "This is an awesome notification that must be closed"
     },
+    "notification.autohide": {
+      "text": "This is notification will hide itself"
+    },
     "waiting": {
       "title": "Registration",
       "text": "We are currently in the process of creating your account. Thank your for you patience."
