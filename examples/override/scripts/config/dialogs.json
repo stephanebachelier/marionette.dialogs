@@ -32,6 +32,10 @@
     "waiting": {
       "title": "Registration",
       "text": "We are currently in the process of creating your account. Thank your for you patience."
+    },
+    "waiting.foldable": {
+      "title": "Registration",
+      "text": "We are currently in the process of creating your account. Thank your for you patience."
     }
   }
 }
