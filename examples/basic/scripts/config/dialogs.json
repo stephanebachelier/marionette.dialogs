@@ -16,6 +16,9 @@
     "notification": {
       "text": "This is an awesome notification that must be closed"
     },
+    "toast": {
+      "text": "Network connection failed."
+    },
     "waiting": {
       "title": "Registration",
       "text": "We are currently in the process of creating your account. Thank your for you patience."
