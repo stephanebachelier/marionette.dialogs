@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.1.0
- *  Release on: 2014-09-29
+/*! marionette.dialogs - v0.2.0
+ *  Release on: 2014-10-18
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -101,6 +101,12 @@ define([
   });
   
   dialogs.notification = Notification;
+
+  var Toast = Notification.extend({
+    className: 'dialog dialog--toast',
+  });
+  
+  dialogs.toast = Toast;
 
   var Waiting = Dialog.extend({
     className: 'dialog dialog--waiting'
