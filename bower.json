@@ -12,7 +12,7 @@
     "type": "git"
   },
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "backbone.marionette": "~2.2.1",
     "requirejs": "~2.1.15",
     "ratchet": "~2.0.2",
@@ -24,6 +24,10 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "Gruntfile",
+    "examples",
+    "lib",
+    "tasks"
   ]
 }
