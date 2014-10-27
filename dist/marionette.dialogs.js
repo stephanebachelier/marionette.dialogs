@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.2.2
- *  Release on: 2014-10-18
+/*! marionette.dialogs - v0.2.3
+ *  Release on: 2014-10-27
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
