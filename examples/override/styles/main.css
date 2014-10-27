@@ -38,7 +38,7 @@
   top: 90%;
 }
 
-.fold .waiting--title, .fold .waiting--text {
+.fold .waiting--title, .fold .waiting--message {
   display: none;
 }
 
