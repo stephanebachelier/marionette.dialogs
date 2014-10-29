@@ -22,6 +22,12 @@
     "waiting": {
       "title": "Registration",
       "text": "We are currently in the process of creating your account. Thank your for you patience."
+    },
+    "splash": {
+      "title": "Registration complete",
+      "text": "Now you can log in.",
+      "choice-1": "Go to homepage",
+      "choice-2": "Go to login"
     }
   }
 }
