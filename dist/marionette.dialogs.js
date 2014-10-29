@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.4.2
+/*! marionette.dialogs - v0.4.3
  *  Release on: 2014-10-29
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -137,11 +137,11 @@ define([
   dialogs.types.splash = Splash;
 
   dialogs.get = function (name) {
-    return dialogs.types[name] || null;
+    return dialogs.types[name] || dialogs.custom[name] || null;
   };
 
   dialogs.register = function (name, Type) {
-    dialogs._custom[name] = Type;
+    dialogs.custom[name] = Type;
   };
 
   var Factory = function (dialogs, options) {
