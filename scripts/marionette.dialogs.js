@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.4.0
+/*! marionette.dialogs - v0.4.3
  *  Release on: 2014-10-29
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -137,11 +137,11 @@ define([
   dialogs.types.splash = Splash;
 
   dialogs.get = function (name) {
-    return dialogs.types[name] || null;
+    return dialogs.types[name] || dialogs.custom[name] || null;
   };
 
   dialogs.register = function (name, Type) {
-    dialogs._custom[name] = Type;
+    dialogs.custom[name] = Type;
   };
 
   var Factory = function (dialogs, options) {
@@ -168,7 +168,7 @@ define([
     // we need to set the template before rendering the view
     // if no template has been attached to the view search for the main template registry
     if (!view.template) {
-      view.template = this.templates[dialog.template];
+      view.template = this.templates[dialog.template || dialog.type];
     }
   
     return view;
@@ -195,6 +195,8 @@ define([
     }
   
     region.show(dialog);
+  
+    return dialog;
   };
   
   dialogs.Factory = Factory;
