@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.2.3
- *  Release on: 2014-10-27
+/*! marionette.dialogs - v0.2.4
+ *  Release on: 2014-10-29
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -113,6 +113,24 @@ define([
   });
   
   dialogs.waiting = Waiting;
+
+  var Splash = Dialog.extend({
+    className: 'dialog dialog--splash',
+  
+    ui: {
+      buttons: '.splash--button'
+    },
+  
+    events: {
+      'click @ui.buttons': 'onClicked'
+    },
+  
+    onClicked: function (e) {
+      this.dismiss();
+    }
+  });
+  
+  dialogs.splash = Splash;
 
   // attach to marionette
   Marionette.dialogs = dialogs;

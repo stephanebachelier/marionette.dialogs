@@ -1,6 +1,6 @@
 {
   "name": "marionette.dialogs",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A collection of dialogs found in a web app made with marionette",
   "main": "dist/marionette.dialogs.js",
   "author": {
