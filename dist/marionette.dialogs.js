@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.4.0
+/*! marionette.dialogs - v0.4.1
  *  Release on: 2014-10-29
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -195,6 +195,8 @@ define([
     }
   
     region.show(dialog);
+  
+    return dialog;
   };
   
   dialogs.Factory = Factory;
