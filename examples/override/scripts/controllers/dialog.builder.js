@@ -26,9 +26,9 @@ function (Marionette, registry, config) {
       view.template = template;
       region.show(view);
 
-      region.$el.toggleClass('active');
+      region.$el.addClass('active');
       view.on('destroy', function (view) {
-        region.$el.toggleClass('active');
+        region.$el.removeClass('active');
       }, this);
     });
   };
