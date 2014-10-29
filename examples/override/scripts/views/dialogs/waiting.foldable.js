@@ -10,6 +10,8 @@ define([
 
     toggleDisplay: function () {
       this.$el.toggleClass('fold');
+      // enable user interaction with background
+      this.$el.parent().removeClass('active');
     }
   });
 });
