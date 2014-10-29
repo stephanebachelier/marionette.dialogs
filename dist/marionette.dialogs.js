@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.2.5
+/*! marionette.dialogs - v0.3.0
  *  Release on: 2014-10-29
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -7,7 +7,11 @@ define([
 ], function (Marionette) {
   'use strict';
 
-  var dialogs = {};
+  var dialogs = {
+    types: {}, // basic types provided by library
+    custom: {} // any other types defined
+  };
+
   var Dialog = Marionette.ItemView.extend({
     serializeData: function () {
       return this.options.dialog || {};
@@ -27,7 +31,7 @@ define([
     }
   });
   
-  dialogs.dialog = Dialog;
+  dialogs.types.dialog = Dialog;
 
   var Alert = Dialog.extend({
     className: 'dialog dialog--alert',
@@ -41,7 +45,7 @@ define([
     }
   });
   
-  dialogs.alert = Alert;
+  dialogs.types.alert = Alert;
 
   var Confirm = Dialog.extend({
     className: 'dialog dialog--confirm',
@@ -73,7 +77,7 @@ define([
     }
   });
   
-  dialogs.confirm = Confirm;
+  dialogs.types.confirm = Confirm;
 
   var Notification = Dialog.extend({
     className: 'dialog dialog--notification',
@@ -100,19 +104,19 @@ define([
     }
   });
   
-  dialogs.notification = Notification;
+  dialogs.types.notification = Notification;
 
   var Toast = Notification.extend({
     className: 'dialog dialog--toast',
   });
   
-  dialogs.toast = Toast;
+  dialogs.types.toast = Toast;
 
   var Waiting = Dialog.extend({
     className: 'dialog dialog--waiting'
   });
   
-  dialogs.waiting = Waiting;
+  dialogs.types.waiting = Waiting;
 
   var Splash = Dialog.extend({
     className: 'dialog dialog--splash',
@@ -130,7 +134,15 @@ define([
     }
   });
   
-  dialogs.splash = Splash;
+  dialogs.types.splash = Splash;
+
+  dialogs.get = function (name) {
+    return dialogs.types[name] || null;
+  };
+
+  dialogs.register = function (name, Type) {
+    dialogs._custom[name] = Type;
+  };
 
   // attach to marionette
   Marionette.dialogs = dialogs;
