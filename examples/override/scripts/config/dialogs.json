@@ -2,40 +2,40 @@
   "dialogs": {
     "alert": {
       "title": "alert!",
-      "text": "this is an alert",
+      "message": "this is an alert",
       "label": "foo !"
     },
     "alert.success": {
       "title": "alert!",
-      "text": "this is a successful alert",
+      "message": "this is a successful alert",
       "label": "foo !"
     },
     "alert.error": {
       "title": "access denied",
-      "text": "you provided wrong credentials",
+      "message": "you provided wrong credentials",
       "label": "ok"
     },
     "confirm": {
       "title": "confirm",
-      "text": "Yes or no, that is the question.",
+      "message": "Yes or no, that is the question.",
       "label": {
         "ok": "Yes",
         "nok": "No"
       }
     },
     "notification": {
-      "text": "This is an awesome notification that must be closed"
+      "message": "This is an awesome notification that must be closed"
     },
     "notification.autohide": {
-      "text": "This is notification will hide itself"
+      "message": "This is notification will hide itself"
     },
     "waiting": {
       "title": "Registration",
-      "text": "We are currently in the process of creating your account. Thank your for you patience."
+      "message": "We are currently in the process of creating your account. Thank your for you patience."
     },
     "waiting.foldable": {
       "title": "Registration",
-      "text": "We are currently in the process of creating your account. Thank your for you patience."
+      "message": "We are currently in the process of creating your account. Thank your for you patience."
     }
   }
 }
