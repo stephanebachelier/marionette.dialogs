@@ -8,10 +8,11 @@ function (Marionette, dialogs, config) {
   var builder = Object.create(null);
 
   builder.create = function (type) {
-    if (!type && !dialogs[type]) {
+    if (!type && !dialogs.get(type)) {
       return;
     }
-    var view = new dialogs[type]({
+    var Dialog = dialogs.get(type);
+    var view = new Dialog({
       dialog: config.dialogs[type] || {}
     });
 
