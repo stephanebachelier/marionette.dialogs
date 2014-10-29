@@ -1,0 +1,57 @@
+.alert--success {
+  background: white;
+}
+
+.alert--success .icon-check {
+  color: green;
+  border-radius: 10px;
+  border: solid green 3px;
+}
+
+.alert--error {
+  background: white;
+}
+
+.alert--error .dialog--title {
+  color: #d9534f;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 10px 0;
+}
+
+.alert--error .icon-person {
+  color: #d9534f;
+  font-size: 20px;
+}
+
+.dialog--notification a {
+  color: #777;
+}
+
+.dialog--waiting {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.dialog--waiting.fold {
+  top: 90%;
+}
+
+.fold .waiting--title, .fold .waiting--message {
+  display: none;
+}
+
+.waiting--loader {
+  position: relative;
+  top: 50%;
+  margin-top: 0;
+}
+
+.fold .waiting--loader {
+  top: 10px;
+}
+
+.dialog--notification p {
+  margin-bottom: 0;
+}

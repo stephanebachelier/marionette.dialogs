@@ -1,0 +1,41 @@
+{
+  "dialogs": {
+    "alert": {
+      "title": "alert!",
+      "message": "this is an alert",
+      "label": "foo !"
+    },
+    "alert.success": {
+      "title": "alert!",
+      "message": "this is a successful alert",
+      "label": "foo !"
+    },
+    "alert.error": {
+      "title": "access denied",
+      "message": "you provided wrong credentials",
+      "label": "ok"
+    },
+    "confirm": {
+      "title": "confirm",
+      "message": "Yes or no, that is the question.",
+      "label": {
+        "ok": "Yes",
+        "nok": "No"
+      }
+    },
+    "notification": {
+      "message": "This is an awesome notification that must be closed"
+    },
+    "notification.autohide": {
+      "message": "This is notification will hide itself"
+    },
+    "waiting": {
+      "title": "Registration",
+      "message": "We are currently in the process of creating your account. Thank your for you patience."
+    },
+    "waiting.foldable": {
+      "title": "Registration",
+      "message": "We are currently in the process of creating your account. Thank your for you patience."
+    }
+  }
+}

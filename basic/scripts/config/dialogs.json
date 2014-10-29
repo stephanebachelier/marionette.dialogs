@@ -1,0 +1,39 @@
+{
+  "dialogs": {
+    "alert": {
+      "type": "alert",
+      "title": "alert!",
+      "message": "this is an alert",
+      "label": "foo !"
+    },
+    "confirm": {
+      "type": "confirm",
+      "title": "confirm",
+      "message": "Yes or no, that is the question.",
+      "label": {
+        "ok": "Yes",
+        "nok": "No"
+      }
+    },
+    "notification": {
+      "type": "notification",
+      "message": "This is an awesome notification that must be closed"
+    },
+    "toast": {
+      "type": "toast",
+      "message": "Network connection failed."
+    },
+    "waiting": {
+      "type": "waiting",
+      "title": "Registration",
+      "message": "We are currently in the process of creating your account. Thank your for you patience."
+    },
+    "splash": {
+      "type": "splash",
+      "title": "Registration complete",
+      "message": "Now you can log in.",
+      "choice-1": "Go to homepage",
+      "choice-2": "Go to login"
+    }
+  }
+}
