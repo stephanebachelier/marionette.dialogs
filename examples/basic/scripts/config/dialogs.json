@@ -2,30 +2,30 @@
   "dialogs": {
     "alert": {
       "title": "alert!",
-      "text": "this is an alert",
+      "message": "this is an alert",
       "label": "foo !"
     },
     "confirm": {
       "title": "confirm",
-      "text": "Yes or no, that is the question.",
+      "message": "Yes or no, that is the question.",
       "label": {
         "ok": "Yes",
         "nok": "No"
       }
     },
     "notification": {
-      "text": "This is an awesome notification that must be closed"
+      "message": "This is an awesome notification that must be closed"
     },
     "toast": {
-      "text": "Network connection failed."
+      "message": "Network connection failed."
     },
     "waiting": {
       "title": "Registration",
-      "text": "We are currently in the process of creating your account. Thank your for you patience."
+      "message": "We are currently in the process of creating your account. Thank your for you patience."
     },
     "splash": {
       "title": "Registration complete",
-      "text": "Now you can log in.",
+      "message": "Now you can log in.",
       "choice-1": "Go to homepage",
       "choice-2": "Go to login"
     }
