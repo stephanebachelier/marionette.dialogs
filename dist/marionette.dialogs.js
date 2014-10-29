@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.3.0
+/*! marionette.dialogs - v0.4.0
  *  Release on: 2014-10-29
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -143,6 +143,61 @@ define([
   dialogs.register = function (name, Type) {
     dialogs._custom[name] = Type;
   };
+
+  var Factory = function (dialogs, options) {
+    this.dialogs = dialogs;
+  
+    this.options = options || {};
+    this.config = options.config || {};
+    this.templates = options.templates || {};
+  };
+  
+  Factory.prototype.createDialog = function (dialog, options) {
+    var opts = options || {};
+    opts.dialog = dialog;
+  
+    var Dialog = this.dialogs.get(dialog.type);
+  
+    // add any classname if defined
+    if (dialog.className) {
+      opts.className = Dialog.prototype.className + ' ' + dialog.className;
+    }
+  
+    // instanciate dialog
+    var view = new Dialog(opts);
+    // we need to set the template before rendering the view
+    // if no template has been attached to the view search for the main template registry
+    if (!view.template) {
+      view.template = this.templates[dialog.template];
+    }
+  
+    return view;
+  };
+  
+  Factory.prototype.create = function (slug, options) {
+    if (!slug && !this.config.dialogs[slug]) {
+      return;
+    }
+  
+    var dialog = this.config.dialogs[slug];
+    return this.createDialog(dialog, options);
+  };
+  
+  Factory.prototype.render = function (region, slug, options) {
+    if (!region) {
+      return;
+    }
+  
+    var dialog = this.create(slug, options);
+  
+    if (!dialog) {
+      return false;
+    }
+  
+    region.show(dialog);
+  };
+  
+  dialogs.Factory = Factory;
 
   // attach to marionette
   Marionette.dialogs = dialogs;
