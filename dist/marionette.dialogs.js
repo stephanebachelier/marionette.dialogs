@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.4.1
+/*! marionette.dialogs - v0.4.2
  *  Release on: 2014-10-29
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -168,7 +168,7 @@ define([
     // we need to set the template before rendering the view
     // if no template has been attached to the view search for the main template registry
     if (!view.template) {
-      view.template = this.templates[dialog.template];
+      view.template = this.templates[dialog.template || dialog.type];
     }
   
     return view;
