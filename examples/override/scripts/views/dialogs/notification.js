@@ -12,7 +12,7 @@ define([
   // by requesting `marionette.dialogs` dependency. If you don't want this behavior simply choose
   // a different name like `notification.closeable` or `closeable.notification`. The second is more
   // readable, but IMHO you kind of lose the namespace
-  return dialogs.notification.extend({
+  return dialogs.types.notification.extend({
     ui: {
       closeButton: '.icon-close'
     },

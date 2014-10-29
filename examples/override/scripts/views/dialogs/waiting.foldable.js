@@ -3,7 +3,7 @@ define([
 ], function (dialogs) {
   'use strict';
 
-  return dialogs.waiting.extend({
+  return dialogs.types.waiting.extend({
     events: {
       click: 'toggleDisplay'
     },

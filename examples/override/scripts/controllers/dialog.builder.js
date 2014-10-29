@@ -11,7 +11,8 @@ function (Marionette, registry, config) {
     if (!type && !registry[type]) {
       return;
     }
-    var view = new registry[type]({
+    var Dialog = registry[type];
+    var view = new Dialog({
       dialog: config.dialogs[type] || {}
     });
 
