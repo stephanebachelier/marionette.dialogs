@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.5.0
+/*! marionette.dialogs - v0.5.1
  *  Release on: 2014-11-06
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -194,13 +194,22 @@ define([
       return;
     }
   
+    // extract region options if any that will be passed to region.show call.
+    var regionOptions = {};
+  
+    if (options && options.hasOwnProperty(region)) {
+      regionOptions = options.region;
+      // remove then from options are they are explicitly for region
+      delete options.region;
+    }
+  
     var dialog = this.create(slug, options);
   
     if (!dialog) {
       return false;
     }
   
-    region.show(dialog);
+    region.show(dialog, regionOptions);
   
     return dialog;
   };
