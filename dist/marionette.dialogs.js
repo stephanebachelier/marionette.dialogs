@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.4.3
- *  Release on: 2014-10-29
+/*! marionette.dialogs - v0.5.0
+ *  Release on: 2014-11-06
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -175,11 +175,17 @@ define([
   };
   
   Factory.prototype.create = function (slug, options) {
-    if (!slug && !this.config.dialogs[slug]) {
+    if (!slug) {
       return;
     }
   
-    var dialog = this.config.dialogs[slug];
+    // enable the slug to be defined as an object
+    var dialog = '[object Object]' === slug.toString() ? slug : this.config.dialogs[slug];
+  
+    if (!dialog) {
+      return;
+    }
+  
     return this.createDialog(dialog, options);
   };
   
