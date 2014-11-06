@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.5.1
+/*! marionette.dialogs - v0.5.2
  *  Release on: 2014-11-06
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -197,9 +197,9 @@ define([
     // extract region options if any that will be passed to region.show call.
     var regionOptions = {};
   
-    if (options && options.hasOwnProperty(region)) {
+    if (options && options.hasOwnProperty('region')) {
       regionOptions = options.region;
-      // remove then from options are they are explicitly for region
+      // remove them from options are they are explicitly for region
       delete options.region;
     }
   
