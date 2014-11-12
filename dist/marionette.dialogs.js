@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.5.2
- *  Release on: 2014-11-06
+/*! marionette.dialogs - v0.5.3
+ *  Release on: 2014-11-13
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -180,7 +180,17 @@ define([
     }
   
     // enable the slug to be defined as an object
-    var dialog = '[object Object]' === slug.toString() ? slug : this.config.dialogs[slug];
+    var dialog;
+  
+    if ('[object Object]' === slug.toString()) {
+      var type = slug.type;
+      if (this.config.dialogs[type]) {
+        dialog = _.extend({}, this.config.dialogs[type], slug);
+      }
+    }
+    else {
+      dialog = this.config.dialogs[slug];
+    }
   
     if (!dialog) {
       return;
