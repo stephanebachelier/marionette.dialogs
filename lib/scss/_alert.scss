@@ -1,0 +1,15 @@
+.alert {
+  @include dialog-box;
+}
+
+.alert--title {
+  @include dialog-box-title;
+}
+
+.alert--message {
+  @include dialog-box-message;
+}
+
+.alert--button {
+  @include dialog-box-button;
+}

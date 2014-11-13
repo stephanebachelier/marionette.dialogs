@@ -1,0 +1,19 @@
+.dialog--container {
+  @include fullscreen();
+  visibility: hidden;
+
+  &.active {
+    visibility: visible;
+
+    > .dialog {
+      @include transform(translate(0, 0));
+    }
+  }
+}
+
+.dialog {
+  @include transition (transform .25s);
+  @include transform(translate(0, -100%));
+  text-align: center;
+  background-color: $dialog-background-color;
+}

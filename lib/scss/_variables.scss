@@ -1,0 +1,27 @@
+// styles
+$dialog-font-family: Helvetica;
+$dialog-title-fontsize: 17px;
+$dialog-message-fontsize: 15px;
+$dialog-button-fontsize: 15px;
+
+$dialog-title-color: black;
+$dialog-message-color: black;
+$dialog-button-color: white;
+$dialog-background-color: white;
+
+$gutter: 10px;
+
+// dialog box
+$dialog-box-top: 33%;
+$dialog-box-width: 80%;
+$dialog-box-radius: 8px;
+$dialog-box-padding: $gutter;
+
+// dialog fullscreen
+$overlay-color-alpha: rgba(0, 0, 0, 0);
+$overlay-color: rgba(0, 0, 0, 0.8);
+
+// custom for variables
+$notification-padding: $gutter;
+
+$waiting-bg: $overlay-color;

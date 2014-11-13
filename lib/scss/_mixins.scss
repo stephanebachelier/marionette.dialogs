@@ -1,0 +1,39 @@
+@mixin fullscreen {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin dialog-fullscreen {
+  @include fullscreen;
+  @extend .overlay;
+  @extend .dialog;
+}
+
+@mixin dialog-box {
+  @extend .dialog;
+  width: $dialog-box-width;
+  margin: $dialog-box-top auto 0;
+  border-radius: $dialog-box-radius;
+  padding: $dialog-box-padding;
+}
+
+@mixin dialog-box-title {
+  font-family: $dialog-font-family;
+  font-size: $dialog-title-fontsize;
+  color: $dialog-title-color;
+}
+
+@mixin dialog-box-message {
+  font-family: $dialog-font-family;
+  font-size: $dialog-message-fontsize;
+  color: $dialog-message-color;
+}
+
+@mixin dialog-box-button {
+  font-family: $dialog-font-family;
+  font-size: $dialog-button-fontsize;
+  color: $dialog-button-color;
+  text-transform: uppercase;
+}

@@ -1,0 +1,19 @@
+.confirm {
+  @include dialog-box;
+}
+
+.confirm--title {
+  @include dialog-box-title;
+}
+
+.confirm--message {
+  @include dialog-box-message;
+}
+
+.confirm--ok--button {
+  @include dialog-box-button;
+}
+
+.confirm--nok--button {
+  @include dialog-box-button;
+}

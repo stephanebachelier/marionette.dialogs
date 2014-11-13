@@ -1,0 +1,8 @@
+.overlay {
+  background: $overlay-color-alpha;
+  @include transition (background-color 0.3s linear);
+
+  &.active {
+    background: $overlay-color;
+  }
+}

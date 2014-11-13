@@ -1,0 +1,14 @@
+@import 'bourbon';
+
+@import 'variables';
+@import 'mixins';
+
+@import 'common';
+@import 'overlay';
+
+// import here all dialogs
+@import 'alert';
+@import 'confirm';
+@import 'notification';
+@import 'splash';
+@import 'waiting';
