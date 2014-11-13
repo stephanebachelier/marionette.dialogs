@@ -8,7 +8,7 @@ module.exports = {
     ]
   },
   lib: {
-    files: '<%= jshint.lib.src %>',
+    files: ['<%= jshint.lib.src %>', '<%= sass.dist.files.src %>'],
     tasks: [
       'build'
     ]

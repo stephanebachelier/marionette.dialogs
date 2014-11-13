@@ -9,4 +9,6 @@ build:
   - preprocess
   - concat
   - uglify
+  - sass
+  - cssmin
   - copy:example
