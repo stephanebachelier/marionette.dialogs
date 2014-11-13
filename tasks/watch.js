@@ -7,10 +7,16 @@ module.exports = {
       'lintspaces:gruntfile'
     ]
   },
-  lib: {
-    files: ['<%= jshint.lib.src %>', '<%= sass.dist.files.src %>'],
+  js: {
+    files: ['<%= jshint.lib.src %>'],
     tasks: [
-      'build'
+      'buildjs'
+    ]
+  },
+  css: {
+    files: ['<%= sass.dist.files.src %>'],
+    tasks: [
+      'buildcss'
     ]
   },
   test: {

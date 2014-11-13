@@ -3,12 +3,21 @@ default:
 
 build:
   - clean
+  - lint
+  - buildjs
+  - buildcss
+  - copy:example
+
+lint:
   - jshint:lib
   - jscs:lib
   - lintspaces:lib
+
+buildjs:
   - preprocess
   - concat
   - uglify
+
+buildcss:
   - sass
   - cssmin
-  - copy:example
