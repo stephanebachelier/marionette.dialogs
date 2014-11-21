@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.5.3
- *  Release on: 2014-11-13
+/*! marionette.dialogs - v0.5.4
+ *  Release on: 2014-11-21
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -21,7 +21,6 @@ define([
     dismiss: function (e) {
       if (e) {
         // stop event propagation
-        e.preventDefault();
         e.stopImmediatePropagation();
       }
   
