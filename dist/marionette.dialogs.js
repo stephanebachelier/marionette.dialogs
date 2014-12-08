@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.5.4
- *  Release on: 2014-11-21
+/*! marionette.dialogs - v0.6.0
+ *  Release on: 2014-12-08
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -13,8 +13,18 @@ define([
   };
 
   var Dialog = Marionette.ItemView.extend({
+    initialize: function (options) {
+      this.options = this.options || {};
+  
+      this.config = this.options && this.options.config ? this.options.config : {};
+  
+      if (this.options && this.options.template) {
+        this.template = this.options.template;
+      }
+    },
+  
     serializeData: function () {
-      return this.options.dialog || {};
+      return this.config;
     },
   
     // `dismiss` is the preferred method to close the dialog
@@ -148,77 +158,59 @@ define([
   
     this.options = options || {};
     this.config = options.config || {};
-    this.templates = options.templates || {};
   };
   
-  Factory.prototype.createDialog = function (dialog, options) {
+  Factory.prototype.createDialog = function (options) {
     var opts = options || {};
-    opts.dialog = dialog;
   
-    var Dialog = this.dialogs.get(dialog.type);
+    var Dialog = this.dialogs.get(options.type);
   
     // add any classname if defined
-    if (dialog.className) {
-      opts.className = Dialog.prototype.className + ' ' + dialog.className;
+    if (options.config && options.config.className) {
+      opts.className = Dialog.prototype.className + ' ' + options.config.className;
     }
   
     // instanciate dialog
-    var view = new Dialog(opts);
-    // we need to set the template before rendering the view
-    // if no template has been attached to the view search for the main template registry
-    if (!view.template) {
-      view.template = this.templates[dialog.template || dialog.type];
-    }
-  
-    return view;
+    return new Dialog(opts);
   };
   
-  Factory.prototype.create = function (slug, options) {
-    if (!slug) {
+  Factory.prototype.create = function (options) {
+    if (!options) {
       return;
     }
   
     // enable the slug to be defined as an object
     var dialog;
   
-    if ('[object Object]' === slug.toString()) {
-      var type = slug.type;
-      if (this.config.dialogs[type]) {
-        dialog = _.extend({}, this.config.dialogs[type], slug);
+    if ('[object Object]' === options.toString()) {
+      var _name = options.name || options.type;
+      if (this.config.dialogs[_name]) {
+        dialog = _.extend({}, this.config.dialogs[_name], options);
       }
     }
     else {
-      dialog = this.config.dialogs[slug];
+      dialog = this.config.dialogs[options];
     }
   
     if (!dialog) {
       return;
     }
   
-    return this.createDialog(dialog, options);
+    return this.createDialog(dialog);
   };
   
-  Factory.prototype.render = function (region, slug, options) {
+  Factory.prototype.render = function (region, config, options) {
     if (!region) {
       return;
     }
   
-    // extract region options if any that will be passed to region.show call.
-    var regionOptions = {};
-  
-    if (options && options.hasOwnProperty('region')) {
-      regionOptions = options.region;
-      // remove them from options are they are explicitly for region
-      delete options.region;
-    }
-  
-    var dialog = this.create(slug, options);
+    var dialog = this.create(config);
   
     if (!dialog) {
       return false;
     }
   
-    region.show(dialog, regionOptions);
+    region.show(dialog, options);
   
     return dialog;
   };
