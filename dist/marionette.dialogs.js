@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.6.2
+/*! marionette.dialogs - v0.6.3
  *  Release on: 2014-12-08
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -164,7 +164,7 @@ define([
     var opts = options || {};
   
     // search for dialog registered under name fallback to type
-    var Dialog = this.dialogs.get(options.name || options.type);
+    var Dialog = this.dialogs.get(options.name) || this.dialogs.get(options.type);
   
     // add any classname if defined
     if (options.config && options.config.className) {
