@@ -1,4 +1,4 @@
-/*! marionette.dialogs - v0.6.1
+/*! marionette.dialogs - v0.6.2
  *  Release on: 2014-12-08
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -175,6 +175,14 @@ define([
     return new Dialog(opts);
   };
   
+  Factory.prototype.buildConfiguration = function (options) {
+    var defaults = {};
+    if (this.config.dialogs[options.type]) {
+      defaults = this.config.dialogs[options.type];
+    }
+    return _.extend(defaults, this.config.dialogs[options.name], options);
+  };
+  
   Factory.prototype.create = function (options) {
     if (!options) {
       return;
@@ -184,13 +192,11 @@ define([
     var dialog;
   
     if ('[object Object]' === options.toString()) {
-      var _name = options.name || options.type;
-      if (this.config.dialogs[_name]) {
-        dialog = _.extend({}, this.config.dialogs[_name], options);
-      }
+      dialog = this.buildConfiguration(options);
     }
     else {
-      dialog = this.config.dialogs[options];
+      var opts = this.config.dialogs[options];
+      dialog = this.buildConfiguration(opts);
     }
   
     if (!dialog) {
