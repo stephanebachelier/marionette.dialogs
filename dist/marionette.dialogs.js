@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.6.3
- *  Release on: 2014-12-08
+/*! marionette.dialogs - v0.6.4
+ *  Release on: 2014-12-26
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -185,25 +185,31 @@ define([
   
   Factory.prototype.create = function (options) {
     if (!options) {
+      this.log('no options given');
       return;
     }
   
     // enable the slug to be defined as an object
-    var dialog;
+    var configuration;
   
     if ('[object Object]' === options.toString()) {
-      dialog = this.buildConfiguration(options);
+      configuration = this.buildConfiguration(options);
     }
     else {
       var opts = this.config.dialogs[options];
-      dialog = this.buildConfiguration(opts);
+      if (!opts) {
+        this.log('no configuration found for the given options');
+        return;
+      }
+      configuration = this.buildConfiguration(opts);
     }
   
-    if (!dialog) {
+    if (!configuration) {
+      this.log('configuration not found');
       return;
     }
   
-    return this.createDialog(dialog);
+    return this.createDialog(configuration);
   };
   
   Factory.prototype.render = function (region, config, options) {
@@ -214,12 +220,17 @@ define([
     var dialog = this.create(config);
   
     if (!dialog) {
+      this.log('Failed to create dialog from given options');
       return false;
     }
   
     region.show(dialog, options);
   
     return dialog;
+  };
+  
+  Factory.prototype.log = function (message) {
+    console.warn('[dialogs:factory]', message);
   };
   
   dialogs.Factory = Factory;
