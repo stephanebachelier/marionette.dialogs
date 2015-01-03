@@ -1,6 +1,6 @@
-/*! marionette.dialogs - v0.6.4
- *  Release on: 2014-12-26
- *  Copyright (c) 2014 Stéphane Bachelier
+/*! marionette.dialogs - v0.6.5
+ *  Release on: 2015-01-03
+ *  Copyright (c) 2015 Stéphane Bachelier
  *  Licensed MIT */
 define([
   'marionette'
@@ -34,8 +34,12 @@ define([
         e.stopImmediatePropagation();
       }
   
-      // if developer want to track dialog closing the `destroy` event
-      // is always triggered
+      // trigger dismiss event
+      this.triggerMethod('dismiss');
+    },
+  
+    // default handler
+    onDismiss: function () {
       this.destroy();
     }
   });
