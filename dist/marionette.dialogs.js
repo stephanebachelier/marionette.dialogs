@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.6.5
- *  Release on: 2015-01-03
+/*! marionette.dialogs - v0.6.6
+ *  Release on: 2015-02-09
  *  Copyright (c) 2015 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -100,8 +100,8 @@ define([
     },
   
     onRender: function () {
-      if (this.getOption('timeout')) {
-        this.runTimer(this.getOption('timeout'));
+      if (this.config && this.config.timeout) {
+        this.runTimer(this.config.timeout);
       }
     },
   
