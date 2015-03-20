@@ -1,5 +1,5 @@
-/*! marionette.dialogs - v0.6.6
- *  Release on: 2015-02-09
+/*! marionette.dialogs - v0.6.7
+ *  Release on: 2015-03-20
  *  Copyright (c) 2015 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -36,6 +36,23 @@ define([
   
       // trigger dismiss event
       this.triggerMethod('dismiss');
+    },
+  
+    // run a timer which will dismiss the view when complete
+    runTimer: function (timeout) {
+      // somewhat hideous as it could simply and better written
+      // `setTimeout(this.dismiss.bind(this), timeout);`
+      // but hey we may need to support device which are not ES5
+      var self = this;
+      setTimeout(function () {
+        self.dismiss();
+      }, timeout);
+    },
+  
+    onRender: function () {
+      if (this.config && this.config.timeout) {
+        this.runTimer(this.config.timeout);
+      }
     },
   
     // default handler
@@ -97,23 +114,6 @@ define([
   
     events: {
       click: 'dismiss'
-    },
-  
-    onRender: function () {
-      if (this.config && this.config.timeout) {
-        this.runTimer(this.config.timeout);
-      }
-    },
-  
-    // run a timer which will dismiss the view when complete
-    runTimer: function (timeout) {
-      // somewhat hideous as it could simply and better written
-      // `setTimeout(this.dismiss.bind(this), timeout);`
-      // but hey we may need to support device which are not ES5
-      var self = this;
-      setTimeout(function () {
-        self.dismiss();
-      }, timeout);
     }
   });
   
